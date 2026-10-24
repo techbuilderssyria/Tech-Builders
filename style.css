@@ -71,6 +71,7 @@ body {
     align-items: center;
 }
 
+
 .nav-links a {
     color: var(--text-color);
     text-decoration: none;
@@ -275,6 +276,7 @@ body {
     cursor: pointer;
 }
 
+
 /* Contact Form */
 .contact-box {
     max-width: 600px;
@@ -362,4 +364,20 @@ body {
 .copyright {
     color: var(--text-gray);
     font-size: 14px;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.nav-logo-img {
+    height: 40px; /* يمكنك تعديل الطول حسب مقاس شعارك الفعلي */
+    width: auto;
+    object-fit: contain;
 }
