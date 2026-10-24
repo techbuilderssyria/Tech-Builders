@@ -303,3 +303,81 @@ body {
         padding: 15px;
     }
 }
+
+/* Header & Navbar - تحسين جذري للجوال */
+.header {
+    background-color: rgba(11, 14, 20, 0.98);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    padding: 0 15px;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+.nav-logo-img {
+    height: 32px; /* تحجيم صارم لارتفاع الشعار ليناسب الشريط العلوي */
+    width: 32px;  /* جعلها مربعة لكي لا تعرض اللوجو الطويل بشكل مزعج */
+    object-fit: contain;
+    border-radius: 6px;
+}
+
+.logo-text-span {
+    font-size: 15px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.nav-links {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 8px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.btn-nav-link {
+    background-color: var(--primary-color) !important;
+    border-radius: 6px;
+    color: #fff !important;
+}
+
+/* للتأكد من الشاشات الضيقة جداً */
+@media (max-width: 450px) {
+    .nav-links a:not(.btn-nav-link) {
+        display: none; /* إخفاء الروابط الجانبية الزائدة في الشاشات الصغيرة جداً والإبقاء على زر تواصل معنا والشعار فقط */
+    }
+    .logo-text-span {
+        display: none; /* إظهار أيقونة الشعار فقط بدون نص لتوفير المساحة */
+    }
+}
