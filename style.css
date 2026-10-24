@@ -21,6 +21,7 @@ body {
     background-color: var(--dark-bg);
     color: var(--text-color);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 .container {
@@ -29,9 +30,9 @@ body {
     padding: 0 20px;
 }
 
-/* Header */
+/* Header & Navbar */
 .header {
-    background-color: rgba(11, 14, 20, 0.9);
+    background-color: rgba(11, 14, 20, 0.95);
     backdrop-filter: blur(10px);
     position: fixed;
     top: 0;
@@ -44,37 +45,35 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
+    height: 75px;
 }
 
-.logo-text {
-    font-size: 24px;
-    font-weight: 800;
-    color: #fff;
-    text-decoration: none;
+.logo-link {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 800;
 }
 
-.tb-badge {
-    background: linear-gradient(135deg, #fff 50%, var(--primary-color) 50%);
-    color: #000;
-    padding: 4px 8px;
-    border-radius: 6px;
-    font-weight: 900;
+.nav-logo-img {
+    height: 35px; /* تحجيم دقيق لئلا يكبر اللوجو */
+    width: auto;
+    object-fit: contain;
 }
 
 .nav-links {
     display: flex;
-    gap: 25px;
+    gap: 12px;
     align-items: center;
 }
-
 
 .nav-links a {
     color: var(--text-color);
     text-decoration: none;
+    font-size: 14px;
     font-weight: 500;
     transition: 0.3s;
 }
@@ -83,31 +82,33 @@ body {
     color: var(--primary-color);
 }
 
-.btn-nav {
+.btn-nav-link {
     background-color: var(--primary-color);
-    padding: 8px 18px;
-    border-radius: 8px;
+    padding: 6px 12px;
+    border-radius: 6px;
     color: #fff !important;
 }
 
 /* Hero Section */
 .hero {
-    padding: 160px 0 100px;
+    padding: 140px 0 80px;
     text-align: center;
     background: radial-gradient(circle at center, rgba(0,117,255,0.15) 0%, rgba(11,14,20,1) 70%);
 }
 
 .hero-title {
-    font-size: 48px;
+    font-size: 36px;
     font-weight: 900;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    line-height: 1.3;
 }
 
 .hero-subtitle {
-    font-size: 20px;
+    font-size: 16px;
     color: var(--text-gray);
     max-width: 700px;
-    margin: 0 auto 30px;
+    margin: 0 auto 25px;
+    padding: 0 10px;
 }
 
 .hero-btns {
@@ -117,8 +118,8 @@ body {
 }
 
 .btn {
-    padding: 12px 28px;
-    font-size: 16px;
+    padding: 12px 24px;
+    font-size: 15px;
     font-weight: 700;
     border-radius: 8px;
     cursor: pointer;
@@ -127,6 +128,7 @@ body {
     border: none;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
 }
 
@@ -139,18 +141,9 @@ body {
     background-color: var(--primary-dark);
 }
 
-.btn-outline {
-    border: 1px solid var(--primary-color);
-    color: #fff;
-}
-
-.btn-outline:hover {
-    background-color: var(--primary-color);
-}
-
 /* Sections */
 .section {
-    padding: 80px 0;
+    padding: 60px 0;
 }
 
 .bg-alt {
@@ -159,142 +152,74 @@ body {
 
 .section-title {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 35px;
 }
 
 .section-title h2 {
-    font-size: 32px;
-    margin-bottom: 10px;
+    font-size: 28px;
+    margin-bottom: 8px;
 }
 
 .section-title p {
     color: var(--text-gray);
+    font-size: 14px;
 }
 
-/* Cards & Grids */
+/* Cards & Grids (سلسة جداً ومتجاوبة مع الجوال) */
 .about-grid, .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
 }
 
 .card {
     background-color: var(--card-bg);
-    padding: 30px;
+    padding: 24px;
     border-radius: 12px;
     border: 1px solid var(--border-color);
-    transition: 0.3s;
+    transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-3px);
     border-color: var(--primary-color);
 }
 
 .card-icon, .service-icon {
-    font-size: 36px;
+    font-size: 32px;
     color: var(--primary-color);
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .card h3 {
-    margin-bottom: 12px;
-    font-size: 22px;
+    margin-bottom: 10px;
+    font-size: 20px;
 }
 
 .card p {
     color: var(--text-gray);
+    font-size: 14px;
 }
-
-/* AI Chat Demo */
-.chat-container {
-    max-width: 650px;
-    margin: 0 auto;
-    background-color: var(--card-bg);
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-    overflow: hidden;
-}
-
-.chat-header {
-    background-color: var(--primary-color);
-    padding: 15px 20px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.chat-messages {
-    height: 300px;
-    padding: 20px;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.message {
-    padding: 10px 15px;
-    border-radius: 10px;
-    max-width: 80%;
-}
-
-.message.bot {
-    background-color: #232D3F;
-    align-self: flex-start;
-}
-
-.message.user {
-    background-color: var(--primary-color);
-    align-self: flex-end;
-}
-
-.chat-input-area {
-    display: flex;
-    padding: 15px;
-    background-color: var(--bg-alt);
-    gap: 10px;
-}
-
-.chat-input-area input {
-    flex: 1;
-    padding: 10px;
-    border-radius: 6px;
-    border: 1px solid var(--border-color);
-    background-color: var(--dark-bg);
-    color: #fff;
-    outline: none;
-}
-
-.chat-input-area button {
-    background-color: var(--primary-color);
-    color: #fff;
-    border: none;
-    padding: 0 20px;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
 
 /* Contact Form */
 .contact-box {
     max-width: 600px;
     margin: 0 auto;
     background-color: var(--card-bg);
-    padding: 40px;
+    padding: 25px;
     border-radius: 12px;
     border: 1px solid var(--border-color);
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     font-weight: 500;
+    font-size: 14px;
 }
 
 .form-group input, .form-group select, .form-group textarea {
@@ -305,6 +230,7 @@ body {
     border-radius: 8px;
     color: #fff;
     outline: none;
+    font-size: 15px; /* حجم خط مناسب للجوال يمنع التكبير التلقائي في الآيفون */
 }
 
 .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
@@ -317,34 +243,35 @@ body {
 }
 
 .status-msg {
-    margin-top: 15px;
+    margin-top: 12px;
     text-align: center;
     font-weight: 700;
+    font-size: 14px;
 }
 
 /* Footer */
 .footer {
-    padding: 50px 0;
+    padding: 40px 0;
     text-align: center;
     border-top: 1px solid var(--border-color);
 }
 
 .footer-logo {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 800;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .social-links {
     display: flex;
     justify-content: center;
     gap: 15px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .social-links a {
-    width: 45px;
-    height: 45px;
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
     background-color: var(--card-bg);
     color: #fff;
@@ -356,28 +283,23 @@ body {
     transition: 0.3s;
 }
 
-.social-links a:hover {
-    background-color: var(--primary-color);
-    transform: translateY(-3px);
-}
-
 .copyright {
     color: var(--text-gray);
-    font-size: 14px;
+    font-size: 13px;
 }
 
-.logo-link {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-    color: #fff;
-    font-size: 24px;
-    font-weight: 800;
-}
-
-.nav-logo-img {
-    height: 40px; /* يمكنك تعديل الطول حسب مقاس شعارك الفعلي */
-    width: auto;
-    object-fit: contain;
+/* ميديا كويري إضافية للشاشات الصغيرة جداً */
+@media (max-width: 480px) {
+    .nav-links a:not(.btn-nav-link) {
+        display: none; /* إخفاء الروابط الثانوية وتصغير القائمة للجوال الصغير لتفادي التداخل */
+    }
+    .hero-title {
+        font-size: 28px;
+    }
+    .hero-subtitle {
+        font-size: 14px;
+    }
+    .contact-box {
+        padding: 15px;
+    }
 }
