@@ -148,7 +148,7 @@
   const requestText = $('#requestText');
   const copyRequest = $('#copyRequest');
   const sendEmailFallback = $('#sendEmailFallback');
-  const contactFields = ['fullName', 'email', 'projectType', 'message'];
+  const contactFields = ['fullName', 'phone', 'projectType', 'message'];
 
   function showFormStatus(message, type) {
     if (!formStatus) return;
@@ -163,7 +163,7 @@
       'طلب تواصل جديد — بناة التقنية | Tech Builders',
       '----------------------------------------',
       `الاسم: ${read('fullName')}`,
-      `البريد الإلكتروني لصاحب الطلب: ${read('email')}`,
+      `رقم الجوال: ${read('phone')}`,
       `الخدمة المطلوبة: ${read('projectType')}`,
       `الميزانية التقريبية: ${budget}`,
       '',
